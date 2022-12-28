@@ -1,0 +1,81 @@
+.color {
+  color: black;
+  background-color: ivory;
+  border-color: black;
+}
+
+.redcolor {
+  color: red;
+  background-color: pink;
+  border-color: red;
+}
+
+.app {
+  align-self: center;
+  outline: solid 2px black;
+  margin: auto;
+  width: 10 * 40px;
+  font-size: larger;
+}
+
+.monitor {
+  @extend .color;
+  text-align: center;
+  vertical-align: middle;
+  width: 10 * 40px;
+  height: 7 * 40px;
+  outline: solid 2px black;
+}
+
+.hangman {
+  font-family: monospace;
+}
+
+.hangmanline {
+  white-space: pre;
+}
+
+.worddisplayletter {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+.worddisplaylettershow {
+  @extend .worddisplayletter, .color;
+}
+
+.worddisplayletterhide {
+  @extend .worddisplayletter, .redcolor;
+}
+
+.keyboard {
+  @extend .color;
+  text-align: center;
+  width: 10 * 40px;
+  height: 4 * 40px;
+  outline: solid 2px black;
+}
+
+.keyboardbutton {
+  @extend .color;
+  text-align: center;
+}
+
+.keyboardletterbutton {
+  @extend .keyboardbutton;
+  width: 40px;
+  height: 40px;
+}
+
+.keyboardspacebutton {
+  @extend .keyboardbutton;
+  width: 400px;
+  height: 40px;
+}
+
+.keyboardbutton:disabled {
+  @extend .redcolor;
+  font-family: Arial;
+  text-align: center;
+}
