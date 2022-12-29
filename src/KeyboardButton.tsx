@@ -12,11 +12,7 @@ export default class KeyboardButton extends React.Component<KeyboardButtonProps>
     return (
       <>
         <button
-          className={
-            this.props.letter === "New game"
-              ? styles.keyboardspacebutton
-              : styles.keyboardletterbutton
-          }
+          className={styles.keyboardletterbutton}
           onClick={(e) => this.props.click(e, this.props.letter)}
           disabled={this.props.block}
         >

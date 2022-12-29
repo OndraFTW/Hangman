@@ -1,9 +1,14 @@
 import React from "react";
 import styles from "./Hangman.module.scss";
 import KeyboardButton from "./KeyboardButton";
+import NewGameButton from "./NewGameButton";
 
 interface KeyboardProps {
-  click: (event: React.MouseEvent<HTMLButtonElement>, letter: string) => void;
+  letterClick: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    letter: string
+  ) => void;
+  newGameClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   tries: string[];
   block: boolean;
 }
@@ -20,7 +25,7 @@ export default class Keyboard extends React.Component<KeyboardProps> {
             return (
               <KeyboardButton
                 letter={k}
-                click={this.props.click}
+                click={this.props.letterClick}
                 block={this.props.block || this.props.tries.includes(k)}
               />
             );
@@ -31,7 +36,7 @@ export default class Keyboard extends React.Component<KeyboardProps> {
             return (
               <KeyboardButton
                 letter={k}
-                click={this.props.click}
+                click={this.props.letterClick}
                 block={this.props.block || this.props.tries.includes(k)}
               />
             );
@@ -42,16 +47,15 @@ export default class Keyboard extends React.Component<KeyboardProps> {
             return (
               <KeyboardButton
                 letter={k}
-                click={this.props.click}
+                click={this.props.letterClick}
                 block={this.props.block || this.props.tries.includes(k)}
               />
             );
           })}
         </div>
         <div>
-          <KeyboardButton
-            letter={"New game"}
-            click={this.props.click}
+          <NewGameButton
+            click={this.props.newGameClick}
             block={!this.props.block}
           />
         </div>
