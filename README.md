@@ -1,4 +1,3 @@
 # Hangman game
 
-Hangman game implemented in Typescript and React.
-Deployed at: http://hangman.wz.cz/
+Implemented in Typescript and React. Deployed at: http://ondraftw.wz.cz/hangman/
